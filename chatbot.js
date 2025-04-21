@@ -1,8 +1,3 @@
-const { error } = require("console")
-
-
-
-
 
 
 try{
@@ -21,17 +16,18 @@ const chatbot = () => {
     rl.question("Your turn: ", (userInput)=> {
 
         userInput = userInput.toLowerCase();
-        console.log("Chatbot ", replies(userInput) || replies["default"]);
+        console.log("Chatbot: ", replies[userInput] || replies["default"]);
 
-        if(userInput === "bye") {
+        if(userInput === "bye"|| userInput === "") {
             rl.close();
+            
         } else {
             chatbot();
         }
         
     })
 }
+chatbot()
 } catch(error){
     console.error(error)
 }
-chatbot()
