@@ -6,5 +6,14 @@ const replies = {
     "default": "I did not undertand that"
 }
 const rl = readline.createInterface({
-    input:process.stdin
+    input:process.stdin,
+    output:process.stdout
 })
+const chatbot = () => {
+    rl.question("Your turn:", (userInput)=> {
+
+        
+        console.log("Chatbot", replies(userInput) || replies["default"]);
+        
+    })
+}
