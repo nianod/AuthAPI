@@ -12,8 +12,14 @@ const rl = readline.createInterface({
 const chatbot = () => {
     rl.question("Your turn:", (userInput)=> {
 
-        
+        userInput = userInput.toLowerCase();
         console.log("Chatbot", replies(userInput) || replies["default"]);
+
+        if(userInput === "bye") {
+            rl.close();
+        } else {
+            
+        }
         
     })
 }
