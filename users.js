@@ -1,7 +1,6 @@
 
 
 import { userslice } from "../utils.user.jsx"
-
 import { asyncHandler } from "../utils.asyncHandler.js" //Error handling
 
 const registerUser = asyncHandler (async (req, res) => {
@@ -17,5 +16,3 @@ const registerUser = asyncHandler (async (req, res) => {
 
 
 });
-
- 
