@@ -1,4 +1,12 @@
-const readline = require("readline")
+const { error } = require("console")
+
+
+
+
+
+
+try{
+    const readline = require("readline")
 const replies = {
     "hello": "Yes yooh hows you",
     "how are you?": "Am good, whatsup",
@@ -10,16 +18,20 @@ const rl = readline.createInterface({
     output:process.stdout
 })
 const chatbot = () => {
-    rl.question("Your turn:", (userInput)=> {
+    rl.question("Your turn: ", (userInput)=> {
 
         userInput = userInput.toLowerCase();
-        console.log("Chatbot", replies(userInput) || replies["default"]);
+        console.log("Chatbot ", replies(userInput) || replies["default"]);
 
         if(userInput === "bye") {
             rl.close();
         } else {
-            
+            chatbot();
         }
         
     })
 }
+} catch(error){
+    console.error(error)
+}
+chatbot()
