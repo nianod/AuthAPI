@@ -17,5 +17,5 @@ rl.question("Enter your name: ", (event) => {
 })
 
 const next = () => {
-    let validation
+    let validation 
 }
